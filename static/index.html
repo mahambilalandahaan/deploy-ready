@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    #chat {
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 400px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    /*Animation keyframes */
+     @keyframes popIn {
+           0% {
+              oapacity : 0;
+              transform : scale(0.8);
+              }
+          100% {
+            oapacity = 1;
+            transform : scale(1);}} 
+    .bubble {
+      padding: 8px 12px;
+      margin: 6px 0;
+      border-radius: 8px;
+      max-width: 80%;
+      animation : popIn 0.2s ease forwards;
+    }
+    .user {
+      background: #d8eafd;
+      align-self: flex-end;
+    }
+    .bot {
+      background: #e8e8e8;
+    }
+    .bubble.user{
+           align-self : flex-end;}
+    .bubble.bot{
+           align-self : flex-start}
+    select {
+      padding: 8px;
+      margin: 5px;
+      border: 1px solid #888;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+    }
+
+    /* Hover effect */
+   select:hover {
+        background-color: #eef6ff;   /* light blue background */
+        border-color: #4a90e2;       /* blue border */
+         }
+
+    /* When dropdown is clicked (focus) */
+     select:focus {
+        outline: none;
+        border-color: #0077ff;
+       box-shadow: 0 0 4px rgba(0, 119, 255, 0.5);
+      }
+
+  </style>
+</head>
+<body>
+
+  <h2>FastAPI Chatbot</h2>
+
+  <div id="chat"></div>
+  <select id="role">
+  <option value="Mentor">Mentor</option>
+  <option value="Teacher">Teacher</option>
+  <option value="Friend">Friend</option>
+  <option value="Advisor">Advisor</option>
+  <option value="Casual">Casual</option>
+  </select>
+
+  <select id="style">
+  <option value="Friendly">Friendly</option>
+  <option value="Formal">Formal</option>
+  <option value="Sarcastic">Sarcastic</option>
+  <option value="Poetic">Poetic</option>
+  </select>
+
+  <select id="length">
+  <option value="Short">Short</option>
+  <option value="Detailed">Detailed</option>
+  </select>
+  <input id="msg" type="text" placeholder="Type message..." style="width:50%;">
+  <button onclick="sendMessage()">Send</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
