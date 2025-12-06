@@ -1,0 +1,10 @@
+fastapi==0.123.8
+uvicorn==0.38.0
+python-dotenv==1.2.1
+openai==2.9.0
+pydantic==2.12.5
+pydantic_core==2.41.5
+starlette==0.50.0
+certifi==2025.11.12
+httpx==0.28.1
+
